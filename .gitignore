@@ -1,0 +1,18 @@
+# Jupyter NB checkpoints
+.ipynb_checkpoints
+
+# Python compiled bytecode
+__pycache__/
+
+# Files
+*.tsv
+*.csv
+
+# Logs
+*.log
+
+# VS Code settings
+.vscode
+
+# macOS
+.DS_Store
