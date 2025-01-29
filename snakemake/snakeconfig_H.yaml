@@ -1,0 +1,16 @@
+dataset: prep3
+size: 100000
+variability_runs: 1
+time_cutoff: 3650
+overallpath: /yourpath
+seed: 6
+preprocessing_seed: TRUE
+encode_seed: TRUE
+latent_seed: TRUE
+survival_seed: TRUE
+with_nores: False
+store_surv_models: True
+reduced_run: False
+reduce_proteomics: False
+one_latent: True
+letter: H

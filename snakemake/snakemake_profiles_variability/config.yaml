@@ -1,0 +1,20 @@
+# Maximum number of jobs to queue at once
+jobs: 10
+# Use slurm for queuing jobs
+executor: slurm
+
+snakefile: /pathtosnakefile/snakefile_variability.smk
+
+# Enable the use of environmental modules
+use-envmodules: true
+# Wait up to 60 seconds for the network file system
+latency-wait: 60
+# Re-run incomplete jobs
+rerun-incomplete: True
+
+# Standard slurm resources; these match the `sbatch` defaults:
+default-resources:
+  # Use standard queue by default
+  - "slurm_partition=standardqueue"
+  # Same mem-per-CPU as Slurm defaults
+  - "mem_mb_per_cpu=15948"
