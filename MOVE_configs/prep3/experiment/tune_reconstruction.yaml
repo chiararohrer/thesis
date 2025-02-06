@@ -1,0 +1,48 @@
+# @package _global_
+
+# Define the default configuration for the data and type of task
+# Additionally, define type of model, optimizer and LR scheduler
+
+defaults:
+  - /task/model_config: vae
+  - /task/training_loop_config/optimizer_config: optim_adam
+  - /task/training_loop_config/lr_scheduler_config: null
+  - override /data: prep3_res_100000_H
+  - override /task: task_tuning
+
+# Set default configuration of model and training loop
+
+task:
+  model_config:
+    num_hidden:
+      - 512
+    num_latent: 128
+    kl_weight: 1e-3
+    dropout_rate: 0.1
+    use_cuda: true
+
+  batch_size: 256
+
+  training_loop_config:
+    max_epochs: 100
+    #annealing_epochs: 10
+    log_grad: false
+
+    # change type of optimizer above
+    optimizer_config:
+      lr: 1e-4
+      weight_decay: 0
+
+# Configure which hyperarameters to vary
+# This will run and log the metrics of 12 models (combination of 3 hyperparams
+# with 2-3 levels: 2 * 2 * 3)
+
+# Any field defined in the task configuration can be configured below.
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      task.model_config.num_hidden: "[512],[1024]"
+      task.model_config.num_latent: 128, 256
+      task.model_config.kl_weight: 1e-2, 1e-3, 1e-4

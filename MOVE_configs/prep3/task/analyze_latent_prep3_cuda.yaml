@@ -1,0 +1,45 @@
+defaults:
+  - task_latent_space
+  - model_config: vae
+  - training_loop_config/optimizer_config: optim_adam
+  - training_loop_config/lr_scheduler_config: null
+  - override reducer_config: tsne
+
+batch_size: 256
+
+features_to_plot:
+  - Age when attended assessment centre
+  - Body fat percentage
+  - Clinical LDL Cholesterol
+  - Sex
+  - UKB assessment centre
+  - Ethnic background
+  - Lymphocyte count
+  - Glycated haemoglobin (HbA1c)
+  - Waist circumference
+  - Cholesterol
+  - Glucose (blood biochem.)
+  - Cystatin C
+  - Calcium
+  - Forced expiratory volume in 1-second (FEV1)
+
+model_config:
+  num_hidden:
+    - 512
+  num_latent: 128
+  kl_weight: 1e-3
+  dropout_rate: 0.1
+  use_cuda: true
+
+compute_accuracy_metrics: true
+compute_feature_importance: false
+
+training_loop_config:
+  max_epochs: 100
+  log_grad: true
+  #max_grad_norm: 1
+
+  # change type of optimizer above
+  optimizer_config:
+    weight_decay: 0
+    lr: 1e-4

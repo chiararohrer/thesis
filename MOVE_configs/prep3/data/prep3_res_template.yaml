@@ -1,0 +1,32 @@
+defaults:
+- base_data
+
+categorical_inputs:
+  - name: genomics
+    preprocessing: one_hot_encode
+    weight: 1
+  - name: pQTL
+    preprocessing: one_hot_encode
+    weight: 1
+continuous_inputs:
+  - name: blood_biochemistry
+    preprocessing: standardize
+    weight: 1
+  - name: blood_count
+    preprocessing: standardize
+    weight: 1
+  - name: metabolomics
+    preprocessing: standardize
+    weight: 2
+  - name: physical_measurements
+    preprocessing: standardize
+    weight: 1
+  - name: proteomics
+    preprocessing: standardize
+    weight: 10
+  - name: urine
+    preprocessing: standardize
+    weight: 1
+  - name: infectious_diseases
+    preprocessing: standardize
+    weight: 10
