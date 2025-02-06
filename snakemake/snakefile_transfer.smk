@@ -45,15 +45,15 @@ rule survival:
         """
         echo "result_folder={input.result_folder}"
         echo "interim_folder={input.interim_folder}"
-        cd /projects/ukbiobank-AUDIT/people/hlc536/python_scripts 
+        cd /mypath/python_scripts 
         if [ "{survival_seed}" == "True" ] && [ "{reduced_run}" == "False" ]; then
-            python transfer_wrapper.py "all" {dataset} "results_res_400000_A/latent_space_{wildcards.omics2}" "interim_data_{params.res_temp}_{size}_{run_letter}" "id_{size}" "/projects/ukbiobank-AUDIT/people/hlc536/baseline/print_{dataset}_{params.res_temp}_{size}_{run_letter}_{wildcards.omics2}" {time_cutoff} {store_surv_models} {seed} "{wildcards.omics2}_{size}.pt"
+            python transfer_wrapper.py "all" {dataset} "results_res_400000_A/latent_space_{wildcards.omics2}" "interim_data_{params.res_temp}_{size}_{run_letter}" "id_{size}" "/mypath/baseline/print_{dataset}_{params.res_temp}_{size}_{run_letter}_{wildcards.omics2}" {time_cutoff} {store_surv_models} {seed} "{wildcards.omics2}_{size}.pt"
         elif [ "{survival_seed}" == "True" ] && [ "{reduced_run}" == "True" ]; then
-            python transfer_wrapper.py "reduced" {dataset} "results_res_400000_A/latent_space_{wildcards.omics2}" "interim_data_{params.res_temp}_{size}_{run_letter}" "id_{size}" "/projects/ukbiobank-AUDIT/people/hlc536/baseline/print_{dataset}_{params.res_temp}_{size}_{run_letter}_{wildcards.omics2}" {time_cutoff} {store_surv_models} {seed} "{wildcards.omics2}_{size}.pt"
+            python transfer_wrapper.py "reduced" {dataset} "results_res_400000_A/latent_space_{wildcards.omics2}" "interim_data_{params.res_temp}_{size}_{run_letter}" "id_{size}" "/mypath/baseline/print_{dataset}_{params.res_temp}_{size}_{run_letter}_{wildcards.omics2}" {time_cutoff} {store_surv_models} {seed} "{wildcards.omics2}_{size}.pt"
         elif [ "{survival_seed}" == "False" ] && [ "{reduced_run}" == "True" ]; then
-            python transfer_wrapper.py "reduced" {dataset} "results_res_400000_A/latent_space_{wildcards.omics2}" "interim_data_{params.res_temp}_{size}_{run_letter}" "id_{size}" "/projects/ukbiobank-AUDIT/people/hlc536/baseline/print_{dataset}_{params.res_temp}_{size}_{run_letter}_{wildcards.omics2}" {time_cutoff} {store_surv_models} "None" "{wildcards.omics2}_{size}.pt"
+            python transfer_wrapper.py "reduced" {dataset} "results_res_400000_A/latent_space_{wildcards.omics2}" "interim_data_{params.res_temp}_{size}_{run_letter}" "id_{size}" "/mypath/baseline/print_{dataset}_{params.res_temp}_{size}_{run_letter}_{wildcards.omics2}" {time_cutoff} {store_surv_models} "None" "{wildcards.omics2}_{size}.pt"
         else
-            python transfer_wrapper.py "all" {dataset} "results_res_400000_A/latent_space_{wildcards.omics2}" "interim_data_{params.res_temp}_{size}_{run_letter}" "id_{size}" "/projects/ukbiobank-AUDIT/people/hlc536/baseline/print_{dataset}_{params.res_temp}_{size}_{run_letter}_{wildcards.omics2}" {time_cutoff} {store_surv_models} "None" "{wildcards.omics2}_{size}.pt"
+            python transfer_wrapper.py "all" {dataset} "results_res_400000_A/latent_space_{wildcards.omics2}" "interim_data_{params.res_temp}_{size}_{run_letter}" "id_{size}" "/mypath/baseline/print_{dataset}_{params.res_temp}_{size}_{run_letter}_{wildcards.omics2}" {time_cutoff} {store_surv_models} "None" "{wildcards.omics2}_{size}.pt"
         fi
         """
 

@@ -49,7 +49,7 @@ rule make_data_config:
     threads: 1
     shell:
         """
-        cd /projects/ukbiobank-AUDIT/people/hlc536/python_scripts/
+        cd /mypath/python_scripts/
         if [ "{one_latent}" == "True" ]; then
             python -c "from preprocessing_functions import data_yaml_from_template; data_yaml_from_template('{overall_path}/{dataset}/config/data/{dataset}_nores_template.yaml', {size}, 'None', '{run_letter}', 'False', 'False')"
             python -c "from preprocessing_functions import data_yaml_from_template; data_yaml_from_template('{overall_path}/{dataset}/config/data/{dataset}_res_template.yaml', {size}, 'None', '{run_letter}', 'False', 'False')"
@@ -118,7 +118,7 @@ rule residualize:
         mem_mb_per_cpu=100000 
     shell:
         """
-        cd /projects/ukbiobank-AUDIT/people/hlc536/python_scripts
+        cd /mypath/python_scripts
         python {dataset}_residualization.py "{overall_path}/{dataset}" "{dataset}_nores_{size}_{params.temp_runs}" "{size}" "{params.temp_runs}"
         """
 
@@ -171,14 +171,14 @@ rule survival:
         mem_mb_per_cpu=150000
     shell:
         """
-        cd /projects/ukbiobank-AUDIT/people/hlc536/python_scripts 
+        cd /mypath/python_scripts 
         if [ "{survival_seed}" == "True" ] && [ "{reduced_run}" == "False" ]; then
-            python wrapper.py "all" {dataset} "results_{params.res_temp}_{size}_{params.runs_temp}" "interim_data_{params.res_temp}_{size}_{run_letter}" "id_{size}" "/projects/ukbiobank-AUDIT/people/hlc536/baseline/{dataset}_{params.res_temp}_{size}_{run_letter}{wildcards.runs}" {time_cutoff} {store_surv_models} {seed} "{wildcards.run_letters}"
+            python wrapper.py "all" {dataset} "results_{params.res_temp}_{size}_{params.runs_temp}" "interim_data_{params.res_temp}_{size}_{run_letter}" "id_{size}" "/mypath/baseline/{dataset}_{params.res_temp}_{size}_{run_letter}{wildcards.runs}" {time_cutoff} {store_surv_models} {seed} "{wildcards.run_letters}"
         elif [ "{survival_seed}" == "True" ] && [ "{reduced_run}" == "True" ]; then
-            python wrapper.py "reduced" {dataset} "results_{params.res_temp}_{size}_{params.runs_temp}" "interim_data_{params.res_temp}_{size}_{run_letter}" "id_{size}" "/projects/ukbiobank-AUDIT/people/hlc536/baseline/{dataset}_{params.res_temp}_{size}_{run_letter}{wildcards.runs}" {time_cutoff} {store_surv_models} {seed} "{wildcards.run_letters}"
+            python wrapper.py "reduced" {dataset} "results_{params.res_temp}_{size}_{params.runs_temp}" "interim_data_{params.res_temp}_{size}_{run_letter}" "id_{size}" "mypath/baseline/{dataset}_{params.res_temp}_{size}_{run_letter}{wildcards.runs}" {time_cutoff} {store_surv_models} {seed} "{wildcards.run_letters}"
         elif [ "{survival_seed}" == "False" ] && [ "{reduced_run}" == "True" ]; then
-            python wrapper.py "reduced" {dataset} "results_{params.res_temp}_{size}_{params.runs_temp}" "interim_data_{params.res_temp}_{size}_{run_letter}" "id_{size}" "/projects/ukbiobank-AUDIT/people/hlc536/baseline/{dataset}_{params.res_temp}_{size}_{run_letter}{wildcards.runs}" {time_cutoff} {store_surv_models} "None" "{wildcards.run_letters}"
+            python wrapper.py "reduced" {dataset} "results_{params.res_temp}_{size}_{params.runs_temp}" "interim_data_{params.res_temp}_{size}_{run_letter}" "id_{size}" "/mypath/baseline/{dataset}_{params.res_temp}_{size}_{run_letter}{wildcards.runs}" {time_cutoff} {store_surv_models} "None" "{wildcards.run_letters}"
         else
-            python wrapper.py "all" {dataset} "results_{params.res_temp}_{size}_{params.runs_temp}" "interim_data_{params.res_temp}_{size}_{run_letter}" "id_{size}" "/projects/ukbiobank-AUDIT/people/hlc536/baseline/{dataset}_{params.res_temp}_{size}_{run_letter}{wildcards.runs}" {time_cutoff} {store_surv_models} "None" "{wildcards.run_letters}"
+            python wrapper.py "all" {dataset} "results_{params.res_temp}_{size}_{params.runs_temp}" "interim_data_{params.res_temp}_{size}_{run_letter}" "id_{size}" "/mypath/baseline/{dataset}_{params.res_temp}_{size}_{run_letter}{wildcards.runs}" {time_cutoff} {store_surv_models} "None" "{wildcards.run_letters}"
         fi
         """
