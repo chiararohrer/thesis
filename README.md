@@ -14,12 +14,12 @@ Number of features per dataset:
 
 | Dataset | # features |
 | --- | --- |
-| metabolomics | 170.0 |
-| blood_biochemistry | 30.0 |
-| proteomics | 2923.0 |
-| urine | 4.0 |
-| blood_count | 22.0 |
-| infectious_diseases | 25.0 |
-| pQTL | 3146.0 |
-| physical_measurements | 14.0 |
-| genomics | 3943.0 |
+| metabolomics | 170 |
+| blood_biochemistry | 30 |
+| proteomics | 2923 |
+| urine | 4 |
+| blood_count | 22 |
+| infectious_diseases | 25 |
+| pQTL | 3146 |
+| physical_measurements | 14 |
+| genomics | 3943 |
