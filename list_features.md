@@ -6940,7 +6940,7 @@
 - Oestradiol
 - Phosphate
 - Rheumatoid factor
-- SHBG
+- SHBG (blood biochem.)
 - Testosterone
 - Total bilirubin
 - Total protein
