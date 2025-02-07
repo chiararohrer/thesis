@@ -1,8 +1,6 @@
 # thesis
 
 To be added:
-- python files
-- MOVE configs
 - link to my modified MOVE code
 
 
