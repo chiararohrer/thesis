@@ -20,11 +20,11 @@ _ move_imputer.py: Analysis of imputation quality using pretrained MOVE VAE.
 
 \ prep4: Residualized continuous features, continuous and residualized SNPs. Used for comparison only.
 
-    _ prepX_prep.py: Prepocessing of UK Biobank data for MOVE.
+\ _ prepX_prep.py: Prepocessing of UK Biobank data for MOVE.
 
-    _ prepX_residualization.py: Residualize previously prepocessed data.
+\ _ prepX_residualization.py: Residualize previously prepocessed data.
 
-    _ prepX_transfer_prep.py: Preprocessing for the transfer learning ("single-omics") experiment.
+\ _ prepX_transfer_prep.py: Preprocessing for the transfer learning ("single-omics") experiment.
 
 _ preprocessing_functions.py: Collections of functions used by other scripts.
 
