@@ -1,7 +1,9 @@
 # MSc thesis: Unsupervised learning of multi-omics in the UK Biobank for disease risk prediction
 
-## To be added:
-- link to my modified MOVE code
+Repository with additional information and code for the analysis of UK Biobank data, created as part of Chiara Rohrer's MSc thesis.
+
+## Link to MOVE framework:
+[MOVE (Multi-Omics Variational autoEncoder) -- developer-move-2.0](https://github.com/RasmussenLab/MOVE/tree/developer-move-2.0)
 
 
 ## Dataset overview
