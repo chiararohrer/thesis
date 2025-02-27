@@ -6,6 +6,7 @@ Repository with additional information and code for the analysis of UK Biobank d
 [MOVE (Multi-Omics Variational autoEncoder) -- developer-move-2.0](https://github.com/RasmussenLab/MOVE/tree/developer-move-2.0)
 ## Links to genotype data preprocessing:
 [Pan UK Biobank SNP selection](https://github.com/RasmussenLab/pan_uk_biobank_gwas_snps)
+
 [Genotype extraction](https://github.com/RasmussenLab/extract_genotypes_workflow)
 
 
