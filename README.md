@@ -1,4 +1,4 @@
-# MSc thesis: Unsupervised learning of multi-omics in the UK Biobank for disease risk prediction
+# Unsupervised learning of multi-omics data in the UK Biobank for disease risk prediction
 
 Repository with additional information and code for the analysis of UK Biobank data, created as part of Chiara Rohrer's MSc thesis.
 
